@@ -1,5 +1,5 @@
-import django_heroku
-django_heroku.settings(locals())
+# import django_heroku
+# django_heroku.settings(locals())
 """
 Django settings for imdb project.
 
@@ -80,7 +80,12 @@ WSGI_APPLICATION = 'imdb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'HOST': 'ec2-54-204-40-248.compute-1.amazonaws.com',
+        'NAME': 'd2qpqe459h0d36',
+        'User':'cpyzfsfmyydrjj',
+        'Port':'5432',
+        'Password':'3286904d5587942a63f58289aff0dc5e51d34e0d09c929f6f4e9579802c081ee',
     }
 }
 
