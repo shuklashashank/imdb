@@ -8,7 +8,7 @@ class AdminMovie(admin.ModelAdmin):
     list_filter = ('inactive',)
     list_display = ('name', 'popularity', 'director', 'imdb_score', 'inactive')
     list_display_links = ('name',)
-    search_fields = ['name', 'director']
+    search_fields = ['name', 'director__name']
 
 
 admin.site.register(Movie, AdminMovie)
