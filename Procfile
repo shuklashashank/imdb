@@ -1,1 +1,1 @@
-web: gunicorn imdb.wsgi:application
+web: gunicorn sampledeploy.wsgi —-log-file -
