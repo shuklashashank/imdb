@@ -1,5 +1,5 @@
 from django.contrib import admin
-from imdbapp.models import (Movie, Director, Genre)
+from imdb.imdbapp.models import (Movie, Director, Genre)
 admin.site.site_title = "IMDB"
 admin.site.site_header = "IMDB"
 
