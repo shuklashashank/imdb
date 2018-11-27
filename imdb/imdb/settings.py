@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'whitenoise.runserver_nostatic'
-    'imdb.imdbapp',
+    'imdbapp',
+# ,    'imdb.imdbapp',
 ]
 
 MIDDLEWARE = [
