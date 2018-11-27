@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'whitenoise.runserver_nostatic'
-    'imdbapp',
-# ,    'imdb.imdbapp',
+    'imdb.imdbapp',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'imdb.urls'
+ROOT_URLCONF = 'imdb.imdb.urls'
 
 TEMPLATES = [
     {
