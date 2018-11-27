@@ -77,18 +77,23 @@ WSGI_APPLICATION = 'imdb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'HOST': 'ec2-54-204-40-248.compute-1.amazonaws.com',
-        'NAME': 'd2qpqe459h0d36',
-        'User':'cpyzfsfmyydrjj',
-        'Port':'5432',
-        'Password':'3286904d5587942a63f58289aff0dc5e51d34e0d09c929f6f4e9579802c081ee',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'HOST': 'ec2-54-204-40-248.compute-1.amazonaws.com',
+#         'NAME': 'd2qpqe459h0d36',
+#         'User':'cpyzfsfmyydrjj',
+#         'Port':'5432',
+#         'Password':'3286904d5587942a63f58289aff0dc5e51d34e0d09c929f6f4e9579802c081ee',
+#     }
+# }
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -125,5 +130,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
